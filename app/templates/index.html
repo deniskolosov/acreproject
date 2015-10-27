@@ -1,7 +1,153 @@
-<!doctype html>
+<html>
 <head>
+<title>Acre</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+.navbar-nav {
+	  width: 100%;
+	    text-align: center;
+
+}
+.navbar-nav > li {
+	  float: none;
+	    display: inline-block;
+
+}
+</style>
 </head>
 <body>
-<h1>Hello</h1>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<a class="navbar-brand" href="#">Acre</a>
+				<li class="active"><a href="#">Проекты</a></li>
+				<li><a href="#">Продукция</a></li>
+				<li><a href="#">О нас</a></li>
+				<li><a href="#">Контакты</a></li>
+				<li class="social pull-right"><a href="#">Inst</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+				<img src="{{url_for('static', filename='img/1.png')}}" class="img-thumbnail" alt=""> 
+			</a>
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/2.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/3.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/4.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/5.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/6.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/7.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/8.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/9.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/10.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/11.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+		<div class="col-md-3">
+			<img src="{{url_for('static', filename='img/12.png')}}" class="img-thumbnail" alt=""> 
+		</div>
+	</div>
+
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Заголовок</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+								<!-- Indicators -->
+								<ol class="carousel-indicators">
+									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+									<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								</ol>
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+										<img class="img-responsive" src="{{url_for('static',filename='img/1.png')}}" alt="...">
+										<div class="carousel-caption">
+											Подпись
+										</div>
+									</div>
+									<div class="item">
+										<img class="img-responsive" src="{{url_for('static',filename='img/1.png')}}" alt="...">
+										<div class="carousel-caption">
+											Подпись
+										</div>
+									</div>
+									<div class="item">
+										<img class="img-responsive" src="{{url_for('static',filename='img/1.png')}}" alt="...">
+										<div class="carousel-caption">
+											Подпись
+										</div>
+									</div>
+								</div>
+
+								<!-- Controls -->
+								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left"></span>
+								</a>
+								<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
 </body>
 </html>
