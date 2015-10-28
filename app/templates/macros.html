@@ -1,0 +1,73 @@
+{% macro nav_link(endpoint, name) %}
+{% if request.endpoint.endswith(endpoint) %}
+<li class="active"><a href="{{ url_for(endpoint) }}">{{name}}</a></li>
+{% else %}
+<li><a href="{{ url_for(endpoint) }}">{{name}}</a></li>
+{% endif %}
+{% endmacro %}
+
+{% macro project_preview(target_modal, img_name) %}
+<div class="col-md-3">
+	<a href="#" data-toggle="modal" data-target="{{target_modal}}">
+		<img src="{{url_for('static', filename='img/' ~ img_name)}}" class="img-thumbnail" alt=""> 
+	</a>
+</div>
+{% endmacro %}
+
+{# img_list is list of tuples (img_filename, caption)  #}
+{% macro make_modal(modal_class, img_list) %}
+<div class="modal fade {{modal_class}} " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<!--<h4 class="modal-title" id="gridSystemModalLabel">Заголовок</h4> Do we need title? -->
+				</div>
+				<div class="modal-body">
+
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						{% for i in range(img_list[1:]|length) %}
+						<li data-target="#carousel-example-generic" data-slide-to="{{i+1}}"></li>
+						{% endfor %}
+						</ol>
+						<!-- Wrapper for slides -->
+						{% for filename, caption in img_list %}
+						{% if loop.first %}
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img class="img-responsive" src="{{url_for('static',filename='img/' ~ filename)}}" alt="{{caption}}">
+								<div class="carousel-caption">
+								{{ caption }}
+								</div>
+							</div>
+						{% else %}
+							<div class="item">
+								<img class="img-responsive" src="{{url_for('static',filename='img/' ~ filename)}}" alt="{{caption}}">
+								<div class="carousel-caption">
+								{{ caption }}
+								</div>
+							</div>
+						{% endif %}
+						{% if loop.last %}
+						</div>
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+						{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endmacro %}

@@ -1,0 +1,33 @@
+{% import "macros.html" as m %}
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<!--
+	<div class="col-md-3">
+		<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+			<img src="{{url_for('static', filename='img/1.png')}}" class="img-thumbnail" alt=""> 
+		</a>
+	</div> -->
+	{{ m.project_preview('.bs-example-modal-lg', '1.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '2.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '3.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '4.png') }}
+
+</div>
+<div class="row">
+	{{ m.project_preview('.bs-example-modal-lg', '5.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '6.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '7.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '8.png') }}
+</div>
+<div class="row">
+	{{ m.project_preview('.bs-example-modal-lg', '9.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '10.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '11.png') }}
+	{{ m.project_preview('.bs-example-modal-lg', '12.png') }}
+</div>
+<!-- make_modal(modal_class, img_list) where img_list = [(img_filename, caption), ...]
+{{ m.make_modal('bs-example-modal-lg', [('1.png', 'Заголовок1'), ('2.png', 'Заголовок2'), ('3.png', 'Заголовок3')]) }}
+
+
+{% endblock %}

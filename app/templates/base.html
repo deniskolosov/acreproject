@@ -1,0 +1,61 @@
+{% from "macros.html" import nav_link %}
+<!doctype html>
+<html>
+<head>
+{% block head %}
+<title>Acre</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for('static', filename='css/theme.min.css')}}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+{% endblock %}
+<style>
+.navbar-nav {
+	  width: 100%;
+	    text-align: center;
+
+}
+.navbar-nav > li {
+	  float: none;
+	    display: inline-block;
+
+}
+.padding-0 {
+	    padding: 0;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<a class="navbar-brand" href="{{url_for('index')}}">ACRE</a>
+				{{ nav_link('projects', 'ПРОЕКТЫ') }}
+				{{ nav_link('products', 'ПРОДУКЦИЯ') }}
+				{{ nav_link('about', 'О НАС') }}
+				{{ nav_link('contacts', 'КОНТАКТЫ') }}
+
+				<li class="social pull-right"><a href="#">Inst</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+<div class="container">
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>
