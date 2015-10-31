@@ -8,24 +8,46 @@
 			<img src="{{url_for('static', filename='img/1.png')}}" class="img-thumbnail" alt=""> 
 		</a>
 	</div> -->
-	{{ m.project_preview('.bs-example-modal-lg', '1.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '2.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '3.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '4.png') }}
+	{{ m.project_preview('.peterhof', 'peterhof/1.png') }}
+	{{ m.project_preview('.garage', 'garage/1.png') }}
+	{{ m.project_preview('.chopchop', 'chopchop/1.png') }}
+	{{ m.project_preview('.banana', 'banana/1.png') }}
 
 </div>
 <div class="row">
-	{{ m.project_preview('.bs-example-modal-lg', '5.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '6.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '7.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '8.png') }}
+	{{ m.project_preview('.tver', 'tver/1.png') }}
+	{{ m.project_preview('.harlen', 'harlen/1.png') }}
+	{{ m.project_preview('.toomba', 'toomba/1.png') }}
+	{{ m.project_preview('.table', 'table/1.png') }}
 </div>
 <div class="row">
-	{{ m.project_preview('.bs-example-modal-lg', '9.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '10.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '11.png') }}
-	{{ m.project_preview('.bs-example-modal-lg', '12.png') }}
+	{{ m.project_preview('.circus', 'circus/1.png') }}
+	{{ m.project_preview('.wongkarwine', 'wongkarwine/1.png') }}
+	{{ m.project_preview('.flower', 'flower/1.png') }}
+	{{ m.project_preview('.consoletable', 'consoletable/1.png') }}
 </div>
 <!-- make_modal(modal_class, img_list) where img_list = [(img_filename, caption), ...] -->
-{{ m.make_modal('bs-example-modal-lg', [('1.png', 'Заголовок1'), ('2.png', 'Заголовок2'), ('3.png', 'Заголовок3')]) }}
+{{ m.make_modal('peterhof', [('peterhof/1.png', 'Заголовок1'),
+                            ('peterhof/2.png', 'Заголовок2'),
+                            ('peterhof/3.png', 'Заголовок3'),
+                            ('peterhof/4.png', 'Заголовок4'),
+                            ('peterhof/5.png', 'Заголовок5'),
+                            ('peterhof/6.png', 'Заголовок6'),
+                            ('peterhof/7.png', 'Заголовок7'),
+                            ('peterhof/8.png', 'Заголовок8'),
+                            ('peterhof/9.png', 'Заголовок9'),
+                            ('peterhof/10.png', 'Заголовок10'),
+                            ('peterhof/11.png', 'Заголовок11')]) }}
+
+{{ m.make_modal('garage', [('garage/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('chopchop', [('chopchop/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('banana', [('banana/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('tver', [('tver/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('harlen', [('harlen/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('toomba', [('toomba/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('table', [('table/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('circus', [('circus/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('wongkarwine', [('wongkarwine/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('flower', [('flower/1.png', 'Заголовок1')]) }}
+{{ m.make_modal('consoletable', [('consoletable/1.png', 'Заголовок1')]) }}
 {% endblock %}
